@@ -12,11 +12,11 @@
   <script>
     a = localStorage.getItem("signedIn");
 
-    if (a == "true") {
+    if (a != null) {
       window.location = "ulsl-arg.github.io/content/content.html";
-    } else {
-      window.location = "ulsl-arg.github.io/index.html?123=123&456=456";
-    }
+    } //else {
+    //  window.location = "ulsl-arg.github.io/index.html?123=123&456=456";
+    //}
   </script>
 </head>	
 <body>
@@ -33,5 +33,6 @@
   </ul>
 
   <div class="main" style="text-align: left; margin-left: 20%; margin-right: 20%;">
+    <h3>You need to be signed in to complete that action!</h3>
   </div>
 </body>
