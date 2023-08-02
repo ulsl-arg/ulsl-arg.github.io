@@ -11,6 +11,11 @@
   </style>
   <script>
     a = localStorage.getItem("signedIn");
+    if (a == "true") {
+      window.location = "ulsl-arg.github.io/content/content.html";
+    } else {
+      window.location = "ulsl-arg.github.io/content/failure.html";
+    }
   </script>
 </head>	
 <body>
