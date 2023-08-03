@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <style>
+      body       {background-color: #ffffff; color: #111; text-align: center; font-family: sans-serif;}
+  
+      ul         {list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333; position: -webkit-sticky; position: sticky; top: 0; width: 100%;}
+  
+      li         {float: left; border-right: 1px solid #bbb;}
+      li a       {display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;}
+      li a:hover {background-color: #111;}.active {background-color: #26c4d5;}
+      li:last-child {border-right: none;}
+    </style>
+    <script>
+        a = localStorage.getItem("signedIn");
+
+        function download() {
+            if (a != null) {
+                var element = document.createElement('a');
+                element.setAttribute('href', "https://ulsl-arg.github.io/db/userdata" + a + ".zip");
+                element.setAttribute('download', a + '.zip');
+
+                element.style.display = 'none';
+                document.body.appendChild(element);
+
+                element.click();
+
+                document.body.removeChild(element);
+            }
+        }
+    </script>
+  </head>	
+  <body>
+    <div>
+      <p>
+        <h1>Download</h1>
+      </p>
+    </div>
+  
+    <ul>
+      <li><a href="https://ulsl-arg.github.io/index.html">Home</a></li>
+      <li><a href="https://ulsl-arg.github.io/content.html" class="active">User Data</a></li>
+      <li style="float:right"><a href="https://ulsl-arg.github.io/signin.html">Sign In</a></li>
+    </ul>
+  
+    <div class="main" style="text-align: left; margin-left: 20%; margin-right: 20%;">
+        <h3>Downloading... If your download does not start, please click <button onclick="download()">here</button>.</h3>
+    </div>
+  </body>
+  
